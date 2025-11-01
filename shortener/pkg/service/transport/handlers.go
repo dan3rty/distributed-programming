@@ -91,7 +91,6 @@ func (h *Handler) addURLHandler(w http.ResponseWriter, r *http.Request) {
 		shortPath = "/" + shortPath
 	}
 
-	log.Println(h.service)
 	err := h.service.AddURL(shortPath, longURL)
 	if err != nil {
 		log.Printf("Error adding url: %v", err)

@@ -3,7 +3,6 @@ package service
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"os"
 	"strings"
 	"sync"
@@ -73,7 +72,6 @@ func (s *ShortenerService) saveToFile() error {
 
 	err = os.WriteFile(s.filePath, fileBytes, 0644)
 	if err != nil {
-		log.Println(s.filePath)
 		return fmt.Errorf("error writing to file %s: %w", s.filePath, err)
 	}
 
